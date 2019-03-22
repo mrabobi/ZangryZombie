@@ -8,6 +8,11 @@
   <h1 align = "center"> <img src="https://i.imgur.com/OJjWoAn.png" width="500" align="middle"> </h1>
   <h1 align = "center"> <img src="https://i.imgur.com/SnTYrq9.png" width="500" align="middle"> </h1>
   
+ 
+  <h1 align = "center"> <img src="https://i.imgur.com/NesFw8v.png" width="500" align="middle"> </h1>
+  <h1 align = "center"> <img src="https://i.imgur.com/qtbMofO.png" width="500" align="middle"> </h1>
+    <h1 align = "center"> <img src="https://i.imgur.com/Ftup66r.png" width="500" align="middle"> </h1>
+  
  <h1 align = "center"> 
   <img src="https://i.imgur.com/RoRNzEB.png"  width="100">
   <img src="https://i.imgur.com/6KLN1Y9.png"  width="100">
