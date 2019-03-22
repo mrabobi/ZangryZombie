@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #gameScreen {
+        border: 1px solid black;
+      }
+
+      #Knight {
+        display: none;
+      }
+
+      #KnightRun {
+        display: none;
+      }
+      #BackGround {
+        display: none;
+      }
+      #Tile1 {
+        display: none;
+      }
+      #Tile2 {
+        display: none;
+      }
+      #Tile3 {
+        display: none;
+      }
+      #KnightRun2 {
+        display: none;
+      }
+      #KnightWalk1 {
+        display: none;
+      }
+      #KnightWalk2 {
+        display: none;
+      }
+      #KnightWalk3 {
+        display: none;
+      }
+      #KnightWalk4 {
+        display: none;
+      }
+      #KnightWalk5 {
+        display: none;
+      }
+      #KnightWalk6 {
+        display: none;
+      }
+      #KnightWalk7 {
+        display: none;
+      }
+      #KnightWalk8 {
+        display: none;
+      }
+      #KnightWalk9 {
+        display: none;
+      }
+      #KnightWalk10 {
+        display: none;
+      }
+      #KnightWalkLeft1 {
+        display: none;
+      }
+      #KnightWalkLeft2 {
+        display: none;
+      }
+      #KnightWalkLeft3 {
+        display: none;
+      }
+      #KnightWalkLeft4 {
+        display: none;
+      }
+      #KnightWalkLeft5 {
+        display: none;
+      }
+      #KnightWalkLeft6 {
+        display: none;
+      }
+      #KnightWalkLeft7 {
+        display: none;
+      }
+      #KnightWalkLeft8 {
+        display: none;
+      }
+      #KnightWalkLeft9 {
+        display: none;
+      }
+      #KnightWalkLeft10 {
+        display: none;
+      }
+
+      #KnightIdleLeft {
+        display: none;
+      }
+
+      #AtackRight1 {
+        display: none;
+      }
+      #AtackRight2 {
+        display: none;
+      }
+      #AtackRight3 {
+        display: none;
+      }
+      #AtackRight4 {
+        display: none;
+      }
+      #AtackRight5 {
+        display: none;
+      }
+      #AtackRight6 {
+        display: none;
+      }
+      #AtackRight7 {
+        display: none;
+      }
+      #AtackRight8 {
+        display: none;
+      }
+      #AtackRight9 {
+        display: none;
+      }
+
+      #AtackRight10 {
+        display: none;
+      }
+      #Zombie {
+        display: none;
+      }
+
+      #ZombieWalk1 {
+        display: none;
+      }
+
+      #ZombieWalk1 {
+        display: none;
+      }
+      #ZombieWalk2 {
+        display: none;
+      }
+      #ZombieWalk3 {
+        display: none;
+      }
+      #ZombieWalk4 {
+        display: none;
+      }
+      #ZombieWalk5 {
+        display: none;
+      }
+      #ZombieWalk6 {
+        display: none;
+      }
+      #ZombieWalk7 {
+        display: none;
+      }
+      #ZombieWalk8 {
+        display: none;
+      }
+      #ZombieWalk9 {
+        display: none;
+      }
+      #ZombieWalk10 {
+        display: none;
+      }
+
+      #AtackLeft1 {
+        display: none;
+      }
+      #AtackLeft2 {
+        display: none;
+      }
+      #AtackLeft3 {
+        display: none;
+      }
+      #AtackLeft4 {
+        display: none;
+      }
+      #AtackLeft5 {
+        display: none;
+      }
+      #AtackLeft6 {
+        display: none;
+      }
+      #AtackLeft7 {
+        display: none;
+      }
+      #AtackLeft8 {
+        display: none;
+      }
+      #AtackLeft9 {
+        display: none;
+      }
+      #AtackLeft10 {
+        display: none;
+      }
+
+      #Jump1 {
+        display: none;
+      }
+      #Jump2 {
+        display: none;
+      }
+      #Jump3 {
+        display: none;
+      }
+      #Jump4 {
+        display: none;
+      }
+      #Jump5 {
+        display: none;
+      }
+      #Jump6 {
+        display: none;
+      }
+      #Jump7 {
+        display: none;
+      }
+      #Jump8 {
+        display: none;
+      }
+      #Jump9 {
+        display: none;
+      }
+      #Jump10 {
+        display: none;
+      }
+      #Skull {
+        display: none;
+      }
+      #TombStone {
+        display: none;
+      }
+      #Tree {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="gameScreen" width="1600" height="900"></canvas>
+    <img id="Knight" src="images/Idle.png" />
+    <img id="KnightIdleLeft" src="images/IdleLeft(1).png" />
+    <img id="Zombie" src="images/Idle (1).png" />
+
+    <img id="KnightRun" src="images/Run (6).png" />
+    <img id="KnightWalk1" src="images/Walk (1).png" />
+    <img id="KnightWalk2" src="images/Walk (2).png" />
+    <img id="KnightWalk3" src="images/Walk (3).png" />
+    <img id="KnightWalk4" src="images/Walk (4).png" />
+    <img id="KnightWalk5" src="images/Walk (5).png" />
+    <img id="KnightWalk6" src="images/Walk (6).png" />
+    <img id="KnightWalk7" src="images/Walk (7).png" />
+    <img id="KnightWalk8" src="images/Walk (8).png" />
+    <img id="KnightWalk9" src="images/Walk (9).png" />
+    <img id="KnightWalk10" src="images/Walk (10).png" />
+    <img id="KnightRun" src="images/Run (6).png" />
+    <img id="ZombieWalk1" src="images/Walk(1).png" />
+    <img id="ZombieWalk2" src="images/Walk(2).png" />
+    <img id="ZombieWalk3" src="images/Walk(3).png" />
+    <img id="ZombieWalk4" src="images/Walk(4).png" />
+    <img id="ZombieWalk5" src="images/Walk(5).png" />
+    <img id="ZombieWalk6" src="images/Walk(6).png" />
+    <img id="ZombieWalk7" src="images/Walk(7).png" />
+    <img id="ZombieWalk8" src="images/Walk(8).png" />
+    <img id="ZombieWalk9" src="images/Walk(9).png" />
+    <img id="ZombieWalk10" src="images/Walk(10).png" />
+    <img id="KnightWalkLeft1" src="images/WalkLeft1.png" />
+    <img id="KnightWalkLeft2" src="images/WalkLeft2.png" />
+    <img id="KnightWalkLeft3" src="images/WalkLeft3.png" />
+    <img id="KnightWalkLeft4" src="images/WalkLeft4.png" />
+    <img id="KnightWalkLeft5" src="images/WalkLeft5.png" />
+    <img id="KnightWalkLeft6" src="images/WalkLeft6.png" />
+    <img id="KnightWalkLeft7" src="images/WalkLeft7.png" />
+    <img id="KnightWalkLeft8" src="images/WalkLeft8.png" />
+    <img id="KnightWalkLeft9" src="images/WalkLeft9.png" />
+    <img id="KnightWalkLeft10" src="images/WalkLeft10.png" />
+    <img id="AtackRight1" src="images/Attack (1).png" />
+    <img id="AtackRight2" src="images/Attack (2).png" />
+    <img id="AtackRight3" src="images/Attack (3).png" />
+    <img id="AtackRight4" src="images/Attack (4).png" />
+    <img id="AtackRight5" src="images/Attack (5).png" />
+    <img id="AtackRight6" src="images/Attack (6).png" />
+    <img id="AtackRight7" src="images/Attack (7).png" />
+    <img id="AtackRight8" src="images/Attack (8).png" />
+    <img id="AtackRight9" src="images/Attack (9).png" />
+    <img id="AtackRight10" src="images/Attack (10).png" />
+    <img id="AtackLeft1" src="images/AttackLeft(1).png" />
+    <img id="AtackLeft2" src="images/AttackLeft(2).png" />
+    <img id="AtackLeft3" src="images/AttackLeft(3).png" />
+    <img id="AtackLeft4" src="images/AttackLeft(4).png" />
+    <img id="AtackLeft5" src="images/AttackLeft(5).png" />
+    <img id="AtackLeft6" src="images/AttackLeft(6).png" />
+    <img id="AtackLeft7" src="images/AttackLeft(7).png" />
+    <img id="AtackLeft8" src="images/AttackLeft(8).png" />
+    <img id="AtackLeft9" src="images/AttackLeft(9).png" />
+
+    <img id="Jump1" src="images/Jump (1).png" />
+    <img id="Jump2" src="images/Jump (2).png" />
+    <img id="Jump3" src="images/Jump (3).png" />
+    <img id="Jump4" src="images/Jump (4).png" />
+    <img id="Jump5" src="images/Jump (5).png" />
+    <img id="Jump6" src="images/Jump (6).png" />
+    <img id="Jump7" src="images/Jump (7).png" />
+    <img id="Jump8" src="images/Jump (8).png" />
+    <img id="Jump9" src="images/Jump (9).png" />
+    <img id="Jump10" src="images/Jump (10).png" />
+
+    <img id="KnightRun2" src="images/Run.png" />
+    <img id="BackGround" src="images/BG.png" />
+    <img id="Tile1" src="images/Tile (1).png" />
+    <img id="Tile2" src="images/Tile (2).png" />
+    <img id="Tile3" src="images/Tile (3).png" />
+    <img id="Skull" src="images/Bone (1).png" />
+    <img id="TombStone" src="images/TombStone (2).png" />
+    <img id="Tree" src="images/Tree.png" />
+
+    <script type="module" src="http://localhost/index.js"></script>
+  </body>
+</html>
