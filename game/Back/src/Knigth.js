@@ -15,6 +15,7 @@ export default class Knight {
       x: gamewidth / 2 - this.width / 2,
       y: gameheight - this.height - 100
     };
+    this.impulse_x=0;
     /*Frames that will be used for the walk right animation*/
     this.framesWalkRight = [
       document.getElementById("KnightWalk1"),
@@ -107,7 +108,7 @@ export default class Knight {
     if (this.frame > 9) this.frame = 0;
 
     this.image = this.framesWalkLeft[this.frame];
-    this.position.x -= 5;
+        this.impulse_x-= 5;
     if (this.position.x < 0) this.position.x = 0;
   }
 
@@ -118,7 +119,7 @@ export default class Knight {
     if (this.frame > 9) this.frame = 0;
 
     this.image = this.framesWalkRight[this.frame];
-    this.position.x += 5;
+        this.impulse_x+= 5;
     if (this.position.x + this.width > this.gamewidth)
       this.position.x = this.gamewidth - this.width;
   }
