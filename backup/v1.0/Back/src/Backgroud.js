@@ -2,36 +2,146 @@
 export default class Backgroud {
   constructor() {
     this.image = document.getElementById("BackGround");
+   	this.columns=16;
+   	this.rows=9;
+    this.tiles = [document.getElementById("Tile1"),document.getElementById("Tile2"),document.getElementById("Tile3"),document.getElementById("Heart")];
+    this.layout=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+              0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+              0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+              0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+              0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+              0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+              0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+              0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+              0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    this.new_layout(this.rows-1);
+    this.place_bonus();
   }
   /*For now,the draw method draws a single picture using multiple images imported from the
 HTML document*/
-  draw(ctx) {
-    ctx.drawImage(this.image, 0, 0, 1600, 900);
-    ctx.drawImage(document.getElementById("Tile1"), 0, 790, 100, 100);
-    ctx.drawImage(document.getElementById("Tile2"), 100, 790, 100, 100);
-    ctx.drawImage(document.getElementById("Tile2"), 100, 790, 100, 100);
-    ctx.drawImage(document.getElementById("Tile2"), 200, 790, 100, 100);
-    ctx.drawImage(document.getElementById("Tile2"), 300, 790, 100, 100);
-    ctx.drawImage(document.getElementById("Tile2"), 400, 790, 100, 100);
-    ctx.drawImage(document.getElementById("Tile2"), 500, 790, 100, 100);
-    ctx.drawImage(document.getElementById("Tile2"), 600, 790, 100, 100);
-    ctx.drawImage(document.getElementById("Tile2"), 600, 790, 100, 100);
-    ctx.drawImage(document.getElementById("Skull"), 600, 790, 100, 100);
+  get_tile_at(position_x,position_y)
+  {
 
-    ctx.drawImage(document.getElementById("Tile2"), 700, 790, 100, 100);
-    ctx.drawImage(document.getElementById("Tile2"), 800, 790, 100, 100);
-    ctx.drawImage(document.getElementById("Tile2"), 900, 790, 100, 100);
-    ctx.drawImage(document.getElementById("Tile2"), 1000, 790, 100, 100);
-    ctx.drawImage(document.getElementById("Tile2"), 1100, 790, 100, 100);
-    ctx.drawImage(document.getElementById("Tile2"), 1200, 790, 100, 100);
-    ctx.drawImage(document.getElementById("Tile2"), 1300, 790, 100, 100);
-    ctx.drawImage(document.getElementById("Skull"), 1300, 790, 100, 100);
-
-    ctx.drawImage(document.getElementById("Tile2"), 1400, 790, 100, 100);
-    ctx.drawImage(document.getElementById("TombStone"), 1400, 690, 100, 100);
-    ctx.drawImage(document.getElementById("TombStone"), 400, 690, 100, 100);
-    ctx.drawImage(document.getElementById("Tree"), 800, 590, 200, 200);
-
-    ctx.drawImage(document.getElementById("Tile3"), 1500, 790, 100, 100);
+      var row=  Math.floor(position_y/100);
+      var column= Math.floor(position_x/100); 
+    return this.layout[row*this.columns+column];
   }
+
+  get_height()
+  {
+    var i=0;
+    while(this.layout[i*this.columns+this.columns-1]<=0)
+      i++;
+    return i;
+  }
+   get_height_first()
+  {
+    var i=0;
+    while(this.layout[i*this.columns]<=0)
+      i++;
+    return i;
+  }
+
+  new_layout(height)
+  {
+    
+    for(var i=0;i<this.rows;i++)
+      for(var j=0;j<this.columns;j++)
+        this.layout[i*this.columns+j]=0;
+      this.layout[height*this.columns]=1;
+      this.layout[height*this.columns+1]=2;
+      for(var i=height;i<this.rows;i++)
+        {
+          this.layout[i*this.columns]=2;
+          this.layout[i*this.columns+1]=2;
+        }
+        var column=2;
+        var last_height=height;
+       
+        while(column<this.columns)
+        {
+          if(last_height<this.rows-1 && last_height>1)
+          {
+          var height_change=Math.floor(Math.random()*3);
+          if(height_change==1 && last_height!=this.rows-1)
+          {
+            last_height+=1;
+          }
+
+          if(height_change==2)
+          {
+            last_height-=1;
+          }
+
+          this.layout[height*this.columns+column]=2;
+          this.layout[height*this.columns+column+1]=2;
+      for(var i=last_height;i<this.rows;i++)
+        {
+          this. layout[i*this.columns+column]=2;
+          this.layout[i*this.columns+column+1]=2;
+        }
+        }
+        else if(last_height==1)
+          {
+            var height_change=Math.floor(Math.random()*2);
+          if(height_change==1)
+          {
+            last_height+=1;
+          }
+
+          this.layout[height*this.columns+column]=2;
+          this.layout[height*this.columns+column+1]=2;
+      for(var i=last_height;i<this.rows;i++)
+        {
+          this. layout[i*this.columns+column]=2;
+          this.layout[i*this.columns+column+1]=2;
+        }
+
+          }
+
+          else if(last_height==this.rows-1)
+          {
+            var height_change=Math.floor(Math.random()*2);
+          if(height_change==1)
+          {
+            last_height-=1;
+          }
+
+          this.layout[height*this.columns+column]=2;
+          this.layout[height*this.columns+column+1]=2;
+      for(var i=last_height;i<this.rows;i++)
+        {
+          this. layout[i*this.columns+column]=2;
+          this.layout[i*this.columns+column+1]=2;
+        }
+
+          }
+        column+=2;
+
+
+        }
+
+  }
+
+  place_bonus()
+  {
+    var column=1;
+    while(column<this.columns)
+    {
+      var row=0;
+      while(this.layout[(row+1)*this.columns+column]===0)
+      {
+        row++;
+      }
+
+      var chance=Math.floor(Math.random()*20+1);
+      if(chance===10)
+        this.layout[row*this.columns+column]=-1;
+
+        column++;
+    }
+  }
+
+
+
 }
