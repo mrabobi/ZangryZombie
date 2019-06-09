@@ -1,10 +1,10 @@
-import Knight from "./Knigth.js";
+import Player from "./Knigth.js";
 import InputHandler from "./input.js";
 import Background from "./Backgroud.js";
 import Zombie from "./Zombie.js";
 
 export default class Game {
-  constructor(gamewidth, gameheight) {
+  constructor(gamewidth, gameheight,character) {
 
   this.gamewidth = 1600;
   this.gameheight = 900;
@@ -13,8 +13,10 @@ export default class Game {
   this.over;
   this.scene_change = new Audio('http://localhost/proiect/Back/sound/Scene_Change.mp3');
   this.bonus = new Audio('http://localhost/proiect/Back/sound/Bonus.mp3');
+  this.gameover_sound = new Audio('http://localhost/proiect/Back/sound/evillaugh.mp3');
   this.map;
   this.player;
+  this.character=character;
   this.controller;
   this.zombies=[];
     
@@ -24,7 +26,7 @@ export default class Game {
 start()
 {
   this.map= new Background();
-  this.player = new Knight(this.gamewidth, this.gameheight);
+  this.player = new Player(this.gamewidth, this.gameheight,this.character);
   this.controller = new InputHandler(this);
   this.pause=false;
   this.over=false;
@@ -37,7 +39,7 @@ start()
  update_position()
   {
     
-       if (this.player.position.x + this.player.width+this.player.impulse_x > this.player.gamewidth)
+       if (this.player.position.x + this.player.width + this.player.impulse_x >= this.gamewidth)
      { 
       this.player.position.x = 0;
       var map_height=this.map.get_height();
@@ -83,10 +85,22 @@ start()
           if(this.player.jumping==true)
           {
           if(this.player.orientation==="l")
-              this.player.image = document.getElementById("KnightIdleLeft");
-          else
-              this.player.image = document.getElementById("Knight");
 
+              if(this.player.orientation==="l" && this.character==="Ninja" )
+            
+              this.player.image = document.getElementById("NinjaIdleLeft");
+            
+             else if(this.player.orientation==="l" && this.character==="Knight" )
+            
+              this.player.image = document.getElementById("KnightIdleLeft");
+            
+             else  if(this.player.orientation==="r" && this.character==="Ninja")
+            
+              this.player.image = document.getElementById("Ninja");
+            
+             else if(this.player.orientation==="r" && this.character==="Knight")
+            
+               this.player.image = document.getElementById("Knight");
                       this.player.frame=-1;
           }
           this.player.impulse_y=0;
@@ -166,10 +180,17 @@ start()
         {
           this.player.lives--;
           if(this.player.lives==0)
-            this.over=true;
+            {
+              this.over=true;
+              this.gameover_sound.play();
+            }
 
         else
-          this.player.position.x=0;
+          {
+            this.player.position.x=0;
+            this.player.position.y=0;
+            this.player.jumping=true;
+          }
       }
       }
   }
@@ -178,20 +199,43 @@ start()
   {
       if(this.player.attacking===true)
     {
+   
+
+   
+if(this.player.orientation==="r")
     for(var i=0;i<this.zombies.length;i++)
       {
         if(this.check_intersection(this.player.position.x+this.player.width,this.player.position.y,
-          this.player.position.x+this.player.width+10,this.player.position.y+this.player.height,
+          this.player.position.x+this.player.width+this.player.attack_range,this.player.position.y+this.player.height,
           this.zombies[i].x,this.zombies[i].y,
-          this.zombies[i].x+this.zombies[i].width,this.zombies[i].y+this.zombies[i].height) && this.zombies[i].dead===false
+          this.zombies[i].x+this.zombies[i].width,this.zombies[i].y+this.zombies[i].height) && this.zombies[i].dying===false && this.player.damage_to_be_done!=0
           )
 
         {
-          this.zombies[i].dangerous=false;
-          this.zombies[i].dying=true;
+          this.zombies[i].take_damage(this.player.damage_to_be_done);
+          this.player.damage_to_be_done=0;
           this.score+=50;
         }
        }
+
+else if(this.player.orientation==="l")
+  for(var i=0;i<this.zombies.length;i++)
+      {
+        if(this.check_intersection(this.player.position.x-this.player.attack_range,this.player.position.y,
+          this.player.position.x,this.player.position.y+this.player.height,
+          this.zombies[i].x,this.zombies[i].y,
+          this.zombies[i].x+this.zombies[i].width,this.zombies[i].y+this.zombies[i].height) && this.zombies[i].dying===false && this.player.damage_to_be_done!=0
+          )
+
+        {
+          this.zombies[i].take_damage(this.player.damage_to_be_done);
+          this.player.damage_to_be_done=0;
+          this.score+=50;
+        }
+       }
+
+
+
 
   }
 }

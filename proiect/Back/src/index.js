@@ -7,22 +7,17 @@ let ctx = canvas.getContext("2d");
 /*We declare the window's width and height as constants*/
 const gamewidth = 1600;
 const gameheight = 900;
-let game = new Game();
+let game = new Game(gamewidth,gameheight,"Knight");
 game.start();
 let display=new Display(game,ctx);
 
 var oldTimeStamp;
 
-function sleep(delay) {
-    var start = new Date().getTime();
-    while (new Date().getTime() < start + delay);
-}
 function gameLoop(timeStamp) {
 
     if(game.over===true)
     {
     		ctx.drawImage(document.getElementById("GameOver"),0,0,gamewidth,gameheight);
-    		    game.controller.execute_commands();
     }
 
    else

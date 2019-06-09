@@ -14,14 +14,17 @@ export default class Zombie {
     this.y=position_y;
     this.direction = 1;
     this.dangerous=true;
+    this.orientation="r";
+    this.health=this.width/5*20;
 
     this.dead=false;
     this.dying=false;
-    this.sounds=[new Audio('http://localhost/game/Back/sound/groan2.mp3'),
+    this.sounds=[new Audio('http://localhost/proiect/Back/sound/groan2.mp3'),
     new Audio('http://localhost/proiect/Back/sound/groan4.mp3'),new Audio('http://localhost/proiect/Back/sound/groan5.mp3'),
     new Audio('http://localhost/proiect/Back/sound/groan6.mp3'),new Audio('http://localhost/proiect/Back/sound/groan5.mp3'),
     new Audio('http://localhost/proiect/Back/sound/groan6.mp3'),new Audio('http://localhost/proiect/Back/sound/groan5.mp3'),
     new Audio('http://localhost/proiect/Back/sound/groan6.mp3')];
+    this.take_hit=new Audio('http://localhost/proiect/Back/sound/take_hit.mp3')
     /*Frames that will be used for the walk right animation*/
     this.framesWalkRight = [
       document.getElementById("ZombieWalk1"),
@@ -45,7 +48,8 @@ export default class Zombie {
       document.getElementById("ZombieWalk10"),
       document.getElementById("ZombieWalk10")
     ];
-this.framesWalkLeft = [
+
+     this.framesWalkLeft = [
       document.getElementById("ZombieWalkLeft1"),
       document.getElementById("ZombieWalkLeft1"),
       document.getElementById("ZombieWalkLeft2"),
@@ -67,7 +71,6 @@ this.framesWalkLeft = [
       document.getElementById("ZombieWalkLeft10"),
       document.getElementById("ZombieWalkLeft10")
     ];
-
     this.deathFrames=[document.getElementById("ZombieDead1"),
     document.getElementById("ZombieDead1"),
     document.getElementById("ZombieDead1"),
@@ -127,17 +130,33 @@ this.framesWalkLeft = [
 {
    if(this.dying===false)
    { 
-    this.frame=(this.frame==this.framesWalkRight.length-1)?0:this.frame+1;
-    this.image = this.framesWalkRight[this.frame];
+    
     this.x += this.direction * 2;
-    if (this.x > this.initial_x+100) this.direction = -1;
-    else if (this.x < this.initial_x) this.direction = 1;
+    if (this.x > this.initial_x+100) 
+      {
+        this.orientation="l";
+        this.direction = -1;
+        this.frame=-1;
+      }
+    else if (this.x < this.initial_x) 
+    {
+      this.direction = 1;
+      this.frame=-1;
+      this.orientation="r";
+    }
+    this.frame=(this.frame==this.framesWalkRight.length-1)?0:this.frame+1;
+   if(this.orientation==="r")
+    this.image = this.framesWalkRight[this.frame];
+  else if(this.orientation==="l")
+        this.image = this.framesWalkLeft[this.frame];
     var chance=Math.floor(Math.random()*200+1);
     if(chance===5)
     {
       var sound=Math.floor(Math.random()*7);
       this.sounds[sound].play();
     }
+
+
   }
   else
   {
@@ -150,5 +169,16 @@ this.framesWalkLeft = [
 
   }
   }
+}
+
+take_damage(value)
+{
+  this.health-=value;
+   this.take_hit.play();
+  if(this.health<=0)
+    {
+    this.dangerous=false;
+    this.dying=true;
+    }
 }
 }

@@ -16,6 +16,9 @@ export default class InputHandler {
         else 
           this.game.pause=false;
           break;
+          case 81:
+          window.location.replace("http://localhost/game/index.html");
+          break;
         case 37:
           if(this.right_key===false && this.x_key===false)
           this.left_key=true;
@@ -91,12 +94,10 @@ export default class InputHandler {
   if ( this.game.player.orientation == "r")    
    {
    this.game.player.atackRight();
-   this.game.player.attacking=true;
    }
    else if ( this.game.player.orientation == "l")     
    { 
     this.game.player.atackLeft();
-    this.game.player.attacking=true;
   }
     if(this.z_key===true)
          this.game.player.Jump();
