@@ -18,6 +18,14 @@ function gameLoop(timeStamp) {
     if(game.over===true)
     {
     		ctx.drawImage(document.getElementById("GameOver"),0,0,gamewidth,gameheight);
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function(){
+				if(this.readyState == 4 && this.status == 200){
+					console.log(this.score);
+				}
+			}
+			xmlhttp.open("GET", "http://localhost/proiect/api/updateScore.php?score=" + score, true);
+			xmlhttp.send();
     }
 
    else
