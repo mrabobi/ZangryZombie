@@ -1,0 +1,59 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+
+<html>
+        <head>
+                <link rel="stylesheet" href="style.css">
+               
+              </head>
+
+<body  background="bg.jpg">
+  <div align="left"><a href="index.php" class="start">BACK</a></div>
+  <img class="center" src="images/bannertop.png" width="500" height= "auto">
+
+    <br><br>
+       <table border="0" align = "center"><tr><td>Choose your character:</td></tr></table>
+<table border="0" align="center">
+<tr><td><img class="img1" src="images/chooseKnight.gif" ></td>
+<td><img class="img1" src="images/chooseNinja.gif" ></td></tr>
+<tr><td><a href="Back/index1.html" class="start">Knight</a></td>
+<td><a href="Back/index2.html" class="start">Ninja</a></td></tr>
+
+    
+        
+        <br>
+<?php
+//$userId=$_GET['userId'];
+$userId=1;
+$api_url='http://localhost/proiect/api/readOneCar.php?userId='.$userId;
+
+$json = file_get_contents($api_url);
+
+$array = json_decode($json, true);
+
+
+ echo " <table align='left' border='0'>
+
+  <td><tr><font color='grey'> Health: " .$array['health'] . "</font></tr></td> <br>
+   <td><tr><font color='grey'> Damage: " .$array['damage'] . "</font></tr></td><br>
+    <td><tr><font color='grey'> Coins: " .$array['coins'] . "</font></tr></td></tr>";
+  
+echo "</table>";
+  
+?>    
+
+
+
+  
+<audio controls autoplay loop hidden>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+      
+      
+</body>
+
+</html>

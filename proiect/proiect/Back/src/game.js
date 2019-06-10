@@ -3,7 +3,11 @@ import InputHandler from "./input.js";
 import Background from "./Backgroud.js";
 import Zombie from "./Zombie.js";
 
+  var healthv;
+  var damage;
+
 export default class Game {
+
   constructor(gamewidth, gameheight,character) {
 
   this.gamewidth = 1600;
@@ -30,6 +34,9 @@ start()
   this.controller = new InputHandler(this);
   this.pause=false;
   this.over=false;
+  this.updateFromShop();
+  console.log(healthv);
+  
   this.score=0;
   this.add_zombies();
 
@@ -252,4 +259,29 @@ else if(this.player.orientation==="l")
     this.check_zombie_hit();
   }
 
+  updateFromShop(){
+    var ajax = new XMLHttpRequest();
+    ajax.open("GET","src/getStats.php", false);
+    ajax.send();
+
+    ajax.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = JSON.parse(this.responseText);
+            console.log(data["healthv"]);
+            this.player.lives = this.player.lives + data["health"];
+            this.player.initial_lives = this.player.initial_lives + data["health"]; 
+  }
+
+};   
+}
+
+
+
+updateAjax(){
+      this.updateFromShop();
+        this.player.lives = this.player.lives;
+        this.player.initial_lives = this.player.initial_lives + health;
+        //this.player.damage = this.player.damage + attack;
+    }  
+    
 }

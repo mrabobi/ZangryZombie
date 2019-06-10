@@ -1,5 +1,9 @@
 /* A class that will be used for managing the player Character*/
 export default class Player {
+
+  initial_lives = 0;
+  lives = 0;
+
   constructor(gamewidth, gameheight,character) {
     /*The character's initial frame*/
 

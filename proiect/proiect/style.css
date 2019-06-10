@@ -1,0 +1,181 @@
+
+span{
+    color: rgb(149, 178, 211);
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-style: italic;
+}
+
+
+.img1{
+    width: 250px;
+    height:auto;
+    float: left;
+}
+
+.img2{
+    width: 250px;
+    height:auto;
+    float: right;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.img3{
+    width: 500px;
+    height:auto;
+    float: left;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.start {
+	background-color:rgb(120, 111, 204);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    
+    padding: 10px 24px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: 2px solid rgb(3, 5, 3);
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+	 text-decoration: none;
+}
+
+.btn :hover {
+  background-color: rgb(99, 110, 100); 
+  color: rgb(143, 36, 36);
+  cursor:pointer;
+}
+
+.btn { background-color:rgb(55, 49, 104);
+color: white;
+padding: 15px 32px;
+text-align: center;
+padding: 20px 50px;
+font-size: 20px;
+border-radius: 30px;
+border: 2px solid rgb(3, 5, 3);
+-webkit-transition-duration: 0.4s; 
+transition-duration: 0.4s;
+}
+.start:hover {
+    background-color: rgb(99, 110, 100); 
+    color: white;
+    cursor:pointer;
+  }
+  button onclick {
+    
+      padding-top:2%;
+  }
+
+.button{
+    background-color:rgb(55, 49, 104);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    padding: 20px 50px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: 2px solid rgb(3, 5, 3);
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+}
+  
+  button:hover {
+    background-color: rgb(99, 110, 100); 
+    color: rgb(81, 8, 114);
+    cursor:pointer;
+  }
+  button onclick {
+      padding-top:2%;
+  }
+
+body{
+  
+   
+    text-align: center;
+    font-size: 1cm;
+    height:500px; 
+    background-size: cover;
+    position: relative;
+}
+modal-window {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.25);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.button1 {
+    background-color:rgb(120, 111, 204);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    
+    padding: 10px 24px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: 2px solid rgb(3, 5, 3);
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+   
+  }
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-image: url ('/start.png') no-repeat;
+  background-color:rgb(120, 111, 204); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.textFont {
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+font-size: 11px;
+color: #6A4A5E;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}

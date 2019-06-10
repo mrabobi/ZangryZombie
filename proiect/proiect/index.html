@@ -1,0 +1,55 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+
+<html>
+        <head>
+                <link rel="stylesheet" href="style.css">
+               
+              </head>
+
+<body  background="bg.jpg">
+        <img class="img1" src="images/zombie.gif" >
+        <img class="img2" src="images/zombie.gif" >
+		<img class="center" src="images/banner.png" width="500" height= "auto">
+
+
+        <?php
+    require 'audio.php';
+    ?>
+        
+        <br>
+        <?php echo $_SESSION['userId'] ?>
+<div class="container">
+<table align ="center">
+    <script src="js/pr.js"></script>
+    <tr><td><br></td></tr>
+    <tr><td><br></td></tr>
+	
+    <tr><td><a href="chooseCharacter.php" class="start">START GAME</a></td></tr>
+    <tr><td><br></td></tr>
+	 <tr>    <td><a href="shop.php" class="start">SHOP</a> </td></tr>
+    <!--<tr><td><a href="settings.php" class="start">SETTINGS</a>  </td></tr>-->
+    <tr>    <td> <a href="top.php" class="start">TOP SCORES</a> </button> </td></tr>
+                <tr>      <td> <a href="howtoplay.php" class="start">HOW TO PLAY</a> </td>
+                    <td></tr>
+                        <tr>      <td> <a href="logout.php" class="start">LOG OUT</a> </td>
+                    <td></tr>
+				
+				   
+</table>
+    </div>
+
+    
+  
+<audio controls autoplay loop hidden>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+      
+      
+</body>
+
+</html>
