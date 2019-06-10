@@ -17,7 +17,7 @@ export default class InputHandler {
           this.game.pause=false;
           break;
           case 81:
-          window.location.replace("http://localhost/game/index.html");
+          window.location.replace("http://localhost/proiect/index.html");
           break;
         case 37:
           if(this.right_key===false && this.x_key===false)

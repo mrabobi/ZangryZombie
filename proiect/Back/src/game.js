@@ -82,9 +82,8 @@ start()
                   }
           else
           {
-          if(this.player.jumping==true)
+          if(this.player.jumping===true)
           {
-          if(this.player.orientation==="l")
 
               if(this.player.orientation==="l" && this.character==="Ninja" )
             
@@ -152,6 +151,7 @@ start()
     if(chance===5)
        { var dimensions=Math.floor(Math.random()*15+75); 
         this.zombies.push(new Zombie(column*100-dimensions+100,row*100-dimensions+100,dimensions,dimensions));
+        column+=2;
           }
         column+=2;
     }

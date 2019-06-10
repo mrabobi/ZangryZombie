@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #gameScreen {
+        border: 1px solid black;
+      }
+
+      #Knight {
+        display: none;
+      }
+
+      #KnightRun {
+        display: none;
+      }
+      #BackGround {
+        display: none;
+      }
+      #Tile1 {
+        display: none;
+      }
+      #Tile2 {
+        display: none;
+      }
+      #Tile3 {
+        display: none;
+      }
+      #KnightRun2 {
+        display: none;
+      }
+      #KnightWalk1 {
+        display: none;
+      }
+      #KnightWalk2 {
+        display: none;
+      }
+      #KnightWalk3 {
+        display: none;
+      }
+      #KnightWalk4 {
+        display: none;
+      }
+      #KnightWalk5 {
+        display: none;
+      }
+      #KnightWalk6 {
+        display: none;
+      }
+      #KnightWalk7 {
+        display: none;
+      }
+      #KnightWalk8 {
+        display: none;
+      }
+      #KnightWalk9 {
+        display: none;
+      }
+      #KnightWalk10 {
+        display: none;
+      }
+      #KnightWalkLeft1 {
+        display: none;
+      }
+      #KnightWalkLeft2 {
+        display: none;
+      }
+      #KnightWalkLeft3 {
+        display: none;
+      }
+      #KnightWalkLeft4 {
+        display: none;
+      }
+      #KnightWalkLeft5 {
+        display: none;
+      }
+      #KnightWalkLeft6 {
+        display: none;
+      }
+      #KnightWalkLeft7 {
+        display: none;
+      }
+      #KnightWalkLeft8 {
+        display: none;
+      }
+      #KnightWalkLeft9 {
+        display: none;
+      }
+      #KnightWalkLeft10 {
+        display: none;
+      }
+
+      #KnightIdleLeft {
+        display: none;
+      }
+
+      #AtackRight1 {
+        display: none;
+      }
+      #AtackRight2 {
+        display: none;
+      }
+      #AtackRight3 {
+        display: none;
+      }
+      #AtackRight4 {
+        display: none;
+      }
+      #AtackRight5 {
+        display: none;
+      }
+      #AtackRight6 {
+        display: none;
+      }
+      #AtackRight7 {
+        display: none;
+      }
+      #AtackRight8 {
+        display: none;
+      }
+      #AtackRight9 {
+        display: none;
+      }
+
+      #AtackRight10 {
+        display: none;
+      }
+      #Zombie {
+        display: none;
+      }
+
+      #ZombieWalk1 {
+        display: none;
+      }
+
+      #ZombieWalk1 {
+        display: none;
+      }
+      #ZombieWalk2 {
+        display: none;
+      }
+      #ZombieWalk3 {
+        display: none;
+      }
+      #ZombieWalk4 {
+        display: none;
+      }
+      #ZombieWalk5 {
+        display: none;
+      }
+      #ZombieWalk6 {
+        display: none;
+      }
+      #ZombieWalk7 {
+        display: none;
+      }
+      #ZombieWalk8 {
+        display: none;
+      }
+      #ZombieWalk9 {
+        display: none;
+      }
+      #ZombieWalk10 {
+        display: none;
+      }
+
+      #AtackLeft1 {
+        display: none;
+      }
+      #AtackLeft2 {
+        display: none;
+      }
+      #AtackLeft3 {
+        display: none;
+      }
+      #AtackLeft4 {
+        display: none;
+      }
+      #AtackLeft5 {
+        display: none;
+      }
+      #AtackLeft6 {
+        display: none;
+      }
+      #AtackLeft7 {
+        display: none;
+      }
+      #AtackLeft8 {
+        display: none;
+      }
+      #AtackLeft9 {
+        display: none;
+      }
+      #AtackLeft10 {
+        display: none;
+      }
+
+      #Jump1 {
+        display: none;
+      }
+      #Jump2 {
+        display: none;
+      }
+      #Jump3 {
+        display: none;
+      }
+      #Jump4 {
+        display: none;
+      }
+      #Jump5 {
+        display: none;
+      }
+      #Jump6 {
+        display: none;
+      }
+      #Jump7 {
+        display: none;
+      }
+      #Jump8 {
+        display: none;
+      }
+      #Jump9 {
+        display: none;
+      }
+      #Jump10 {
+        display: none;
+      }
+      #Skull {
+        display: none;
+      }
+      #TombStone {
+        display: none;
+      }
+      #Tree {
+        display: none;
+      }
+	  
+	  #Heart {
+        display: none;
+      }
+	   #GameOver {
+        display: none;
+      }
+	  #ZombieDead1 {
+        display: none;
+      }
+	  #ZombieDead2 {
+        display: none;
+      }
+	  #ZombieDead3 {
+        display: none;
+      }
+	  #ZombieDead4 {
+        display: none;
+      }
+	  #ZombieDead5 {
+        display: none;
+      }
+	  #ZombieDead6 {
+        display: none;
+      }
+	  #ZombieDead7 {
+        display: none;
+      }
+	  #ZombieDead8 {
+        display: none;
+      }
+	  #ZombieDead9 {
+        display: none;
+      }
+	  #ZombieDead10 {
+        display: none;
+      }
+	  #ZombieDead11 {
+        display: none;
+      }
+	  #ZombieDead12 {
+        display: none;
+      }
+    #ZombieWalkLeft1 {
+      display: none;
+    }
+
+    #ZombieWalkLeft2 {
+      display: none;
+    }
+    #ZombieWalkLeft3 {
+      display: none;
+    }
+    #ZombieWalkLeft4 {
+      display: none;
+    }
+    #ZombieWalkLeft5 {
+      display: none;
+    }
+    #ZombieWalkLeft6 {
+      display: none;
+    }
+    #ZombieWalkLeft7 {
+      display: none;
+    }
+    #ZombieWalkLeft8 {
+      display: none;
+    }
+    #ZombieWalkLeft9 {
+      display: none;
+    }
+    #ZombieWalkLeft10 {
+      display: none;
+    }
+    #JumpReverse{
+      display: none;
+    }
+	
+	#ZombieWalkLeft1{
+      display: none;
+    }
+	#ZombieWalkLeft2{
+      display: none;
+    }
+	#ZombieWalkLeft3{
+      display: none;
+    }
+	#ZombieWalkLeft4{
+      display: none;
+    }
+	#ZombieWalkLeft5{
+      display: none;
+    }
+	#ZombieWalkLeft6{
+      display: none;
+    }
+	#ZombieWalkLeft7{
+      display: none;
+    }
+	#ZombieWalkLeft8{
+      display: none;
+    }
+	#ZombieWalkLeft9{
+      display: none;
+    }
+
+    #NinjaWalk1{
+      display: none;
+    }
+
+    #NinjaWalk2{
+      display: none;
+    }
+
+    #NinjaWalk3{
+      display: none;
+    }
+
+    #NinjaWalk4{
+      display: none;
+    }
+
+    #NinjaWalk5{
+      display: none;
+    }
+
+    #NinjaWalk6{
+      display: none;
+    }
+
+    #NinjaWalk7{
+      display: none;
+    }
+
+    #NinjaWalk8{
+      display: none;
+    }
+
+    #NinjaWalk9{
+      display: none;
+    }
+
+    #NinjaWalk10{
+      display: none;
+    }
+
+    #Ninja{
+      display: none;
+    }
+
+    #NinjaWalk1{
+      display: none;
+    }
+
+    #NinjaWalk2{
+      display: none;
+    }
+
+    #NinjaWalk3{
+      display: none;
+    }
+
+    #NinjaWalk3{
+      display: none;
+    }
+
+    #NinjaWalk4{
+      display: none;
+    }
+
+    #NinjaWalk5{
+      display: none;
+    }
+
+    #NinjaWalk6{
+      display: none;
+    }
+
+    #NinjaWalk7{
+      display: none;
+    }
+
+    #NinjaWalk8{
+      display: none;
+    }
+
+    #NinjaWalk9{
+      display: none;
+    }
+
+    #NinjaWalk10{
+      display: none;
+    }
+
+    #NinjaWalkLeft1{
+      display: none;
+    }
+
+    #NinjaWalkLeft2{
+      display: none;
+    }
+
+    #NinjaWalkLeft3{
+      display: none;
+    }
+
+    #NinjaWalkLeft4{
+      display: none;
+    }
+
+    #NinjaWalkLeft5{
+      display: none;
+    }
+
+    #NinjaWalkLeft6{
+      display: none;
+    }
+
+    #NinjaWalkLeft7{
+      display: none;
+    }
+
+    #NinjaWalkLeft8{
+      display: none;
+    }
+
+    #NinjaWalkLeft9{
+      display: none;
+    }
+
+    #NinjaWalkLeft10{
+      display: none;
+    }
+
+    #NinjaIdleLeft{
+      display: none;
+    }
+
+    #NAtackRight1{
+      display: none;
+    }
+	  
+    #NAtackRight2{
+      display: none;
+    }
+
+    #NAtackRight3{
+      display: none;
+    }
+
+    #NAtackRight4{
+      display: none;
+    }
+
+    #NAtackRight5{
+      display: none;
+    }
+
+    #NAtackRight6{
+      display: none;
+    }
+
+    #NAtackRight7{
+      display: none;
+    }
+
+    #NAtackRight8{
+      display: none;
+    }
+
+    #NAtackRight9{
+      display: none;
+    }
+
+    #NAtackRight10{
+      display: none;
+    }
+
+    #NAtackLeft1{
+      display: none;
+    }
+
+    #NAtackLeft2{
+      display: none;
+    }
+
+    #NAtackLeft3{
+      display: none;
+    }
+
+    #NAtackLeft4{
+      display: none;
+    }
+
+    #NAtackLeft5{
+      display: none;
+    }
+
+    #NAtackLeft6{
+      display: none;
+    }
+
+    #NAtackLeft7{
+      display: none;
+    }
+
+    #NAtackLeft8{
+      display: none;
+    }
+
+    #NAtackLeft9{
+      display: none;
+    }
+
+    #NAtackLeft10{
+      display: none;
+    }
+
+    #JumpNReverse{
+      display: none;
+    }
+
+    #JumpN1{
+      display: none;
+    }
+
+    #JumpN2{
+      display: none;
+    }
+
+    #JumpN3{
+      display: none;
+    }
+
+    #JumpN4{
+      display: none;
+    }
+
+    #JumpN5{
+      display: none;
+    }
+
+    #JumpN6{
+      display: none;
+    }
+
+    #JumpN7{
+      display: none;
+    }
+
+    #JumpN8{
+      display: none;
+    }
+
+    #JumpN9{
+      display: none;
+    }
+
+    #JumpN10{
+      display: none;
+    }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="gameScreen" width="1600" height="900"></canvas>
+    <img id="Zombie" src="images/Idle (1).png" />
+
+
+    <!-- NINJA -->
+    <img id="Ninja" src="images/ninja/Idle.png" />
+    <img id="NinjaIdleLeft" src="images/ninja/IdleLeft(1).png" />
+    <img id="NinjaWalk1" src="images/ninja/Walk (1).png" />
+    <img id="NinjaWalk2" src="images/ninja/Walk (2).png" />
+    <img id="NinjaWalk3" src="images/ninja/Walk (3).png" />
+    <img id="NinjaWalk4" src="images/ninja/Walk (4).png" />
+    <img id="NinjaWalk5" src="images/ninja/Walk (5).png" />
+    <img id="NinjaWalk6" src="images/ninja/Walk (6).png" />
+    <img id="NinjaWalk7" src="images/ninja/Walk (7).png" />
+    <img id="NinjaWalk8" src="images/ninja/Walk (8).png" />
+    <img id="NinjaWalk9" src="images/ninja/Walk (9).png" />
+    <img id="NinjaWalk10" src="images/ninja/Walk (10).png" />
+    <img id="NinjaWalkLeft1" src="images/ninja/WalkLeft1.png" />
+    <img id="NinjaWalkLeft2" src="images/ninja/WalkLeft2.png" />
+    <img id="NinjaWalkLeft3" src="images/ninja/WalkLeft3.png" />
+    <img id="NinjaWalkLeft4" src="images/ninja/WalkLeft4.png" />
+    <img id="NinjaWalkLeft5" src="images/ninja/WalkLeft5.png" />
+    <img id="NinjaWalkLeft6" src="images/ninja/WalkLeft6.png" />
+    <img id="NinjaWalkLeft7" src="images/ninja/WalkLeft7.png" />
+    <img id="NinjaWalkLeft8" src="images/ninja/WalkLeft8.png" />
+    <img id="NinjaWalkLeft9" src="images/ninja/WalkLeft9.png" />
+    <img id="NinjaWalkLeft10" src="images/ninja/WalkLeft10.png" />
+    <img id="NAtackRight1" src="images/ninja/Attack (1).png" />
+    <img id="NAtackRight2" src="images/ninja/Attack (2).png" />
+    <img id="NAtackRight3" src="images/ninja/Attack (3).png" />
+    <img id="NAtackRight4" src="images/ninja/Attack (4).png" />
+    <img id="NAtackRight5" src="images/ninja/Attack (5).png" />
+    <img id="NAtackRight6" src="images/ninja/Attack (6).png" />
+    <img id="NAtackRight7" src="images/ninja/Attack (7).png" />
+    <img id="NAtackRight8" src="images/ninja/Attack (8).png" />
+    <img id="NAtackRight9" src="images/ninja/Attack (9).png" />
+    <img id="NAtackRight10" src="images/ninja/Attack (10).png" />
+    <img id="NAtackLeft1" src="images/ninja/AttackLeft(1).png" />
+    <img id="NAtackLeft2" src="images/ninja/AttackLeft(2).png" />
+    <img id="NAtackLeft3" src="images/ninja/AttackLeft(3).png" />
+    <img id="NAtackLeft4" src="images/ninja/AttackLeft(4).png" />
+    <img id="NAtackLeft5" src="images/ninja/AttackLeft(5).png" />
+    <img id="NAtackLeft6" src="images/ninja/AttackLeft(6).png" />
+    <img id="NAtackLeft7" src="images/ninja/AttackLeft(7).png" />
+    <img id="NAtackLeft8" src="images/ninja/AttackLeft(8).png" />
+    <img id="NAtackLeft9" src="images/ninja/AttackLeft(9).png" />
+
+    <img id="JumpN1" src="images/ninja/Jump (1).png" />
+    <img id="JumpN2" src="images/ninja/Jump (2).png" />
+    <img id="JumpN3" src="images/ninja/Jump (3).png" />
+    <img id="JumpN4" src="images/ninja/Jump (4).png" />
+    <img id="JumpN5" src="images/ninja/Jump (5).png" />
+    <img id="JumpN6" src="images/ninja/Jump (6).png" />
+    <img id="JumpN7" src="images/ninja/Jump (7).png" />
+    <img id="JumpN8" src="images/ninja/Jump (8).png" />
+    <img id="JumpN9" src="images/ninja/Jump (9).png" />
+    <img id="JumpN10" src="images/ninja/Jump (10).png" />
+    <img id= "JumpNReverse" src="images/ninja/JumpReverse.png"/>
+
+
+    <!-- KNIGHT -->
+    <img id="Knight" src="images/knight/Idle.png" />
+    <img id="KnightIdleLeft" src="images/knight/IdleLeft(1).png" />
+    <img id="KnightWalk1" src="images/knight/Walk (1).png" />
+    <img id="KnightWalk2" src="images/knight/Walk (2).png" />
+    <img id="KnightWalk3" src="images/knight/Walk (3).png" />
+    <img id="KnightWalk4" src="images/knight/Walk (4).png" />
+    <img id="KnightWalk5" src="images/knight/Walk (5).png" />
+    <img id="KnightWalk6" src="images/knight/Walk (6).png" />
+    <img id="KnightWalk7" src="images/knight/Walk (7).png" />
+    <img id="KnightWalk8" src="images/knight/Walk (8).png" />
+    <img id="KnightWalk9" src="images/knight/Walk (9).png" />
+    <img id="KnightWalk10" src="images/knight/Walk (10).png" />
+    <img id="KnightWalkLeft1" src="images/knight/WalkLeft1.png" />
+    <img id="KnightWalkLeft2" src="images/knight/WalkLeft2.png" />
+    <img id="KnightWalkLeft3" src="images/knight/WalkLeft3.png" />
+    <img id="KnightWalkLeft4" src="images/knight/WalkLeft4.png" />
+    <img id="KnightWalkLeft5" src="images/knight/WalkLeft5.png" />
+    <img id="KnightWalkLeft6" src="images/knight/WalkLeft6.png" />
+    <img id="KnightWalkLeft7" src="images/knight/WalkLeft7.png" />
+    <img id="KnightWalkLeft8" src="images/knight/WalkLeft8.png" />
+    <img id="KnightWalkLeft9" src="images/knight/WalkLeft9.png" />
+    <img id="KnightWalkLeft10" src="images/knight/WalkLeft10.png" />
+    <img id="AtackRight1" src="images/knight/Attack (1).png" />
+    <img id="AtackRight2" src="images/knight/Attack (2).png" />
+    <img id="AtackRight3" src="images/knight/Attack (3).png" />
+    <img id="AtackRight4" src="images/knight/Attack (4).png" />
+    <img id="AtackRight5" src="images/knight/Attack (5).png" />
+    <img id="AtackRight6" src="images/knight/Attack (6).png" />
+    <img id="AtackRight7" src="images/knight/Attack (7).png" />
+    <img id="AtackRight8" src="images/knight/Attack (8).png" />
+    <img id="AtackRight9" src="images/knight/Attack (9).png" />
+    <img id="AtackRight10" src="images/knight/Attack (10).png" />
+    <img id="AtackLeft1" src="images/knight/AttackLeft(1).png" />
+    <img id="AtackLeft2" src="images/knight/AttackLeft(2).png" />
+    <img id="AtackLeft3" src="images/knight/AttackLeft(3).png" />
+    <img id="AtackLeft4" src="images/knight/AttackLeft(4).png" />
+    <img id="AtackLeft5" src="images/knight/AttackLeft(5).png" />
+    <img id="AtackLeft6" src="images/knight/AttackLeft(6).png" />
+    <img id="AtackLeft7" src="images/knight/AttackLeft(7).png" />
+    <img id="AtackLeft8" src="images/knight/AttackLeft(8).png" />
+    <img id="AtackLeft9" src="images/knight/AttackLeft(9).png" />
+
+    <img id="Jump1" src="images/knight/Jump (1).png" />
+    <img id="Jump2" src="images/knight/Jump (2).png" />
+    <img id="Jump3" src="images/knight/Jump (3).png" />
+    <img id="Jump4" src="images/knight/Jump (4).png" />
+    <img id="Jump5" src="images/knight/Jump (5).png" />
+    <img id="Jump6" src="images/knight/Jump (6).png" />
+    <img id="Jump7" src="images/knight/Jump (7).png" />
+    <img id="Jump8" src="images/knight/Jump (8).png" />
+    <img id="Jump9" src="images/knight/Jump (9).png" />
+    <img id="Jump10" src="images/knight/Jump (10).png" />
+    <img id= "JumpReverse" src="images/knight/JumpReverse.png"/>
+
+      <!-- ZOMBIE  -->
+    <img id="ZombieWalk1" src="images/Walk(1).png" />
+    <img id="ZombieWalk2" src="images/Walk(2).png" />
+    <img id="ZombieWalk3" src="images/Walk(3).png" />
+    <img id="ZombieWalk4" src="images/Walk(4).png" />
+    <img id="ZombieWalk5" src="images/Walk(5).png" />
+    <img id="ZombieWalk6" src="images/Walk(6).png" />
+    <img id="ZombieWalk7" src="images/Walk(7).png" />
+    <img id="ZombieWalk8" src="images/Walk(8).png" />
+    <img id="ZombieWalk9" src="images/Walk(9).png" />
+    <img id="ZombieWalk10" src="images/Walk(10).png" />
+
+    <img id="ZombieWalkLeft1" src="images/ZombieWalkLeft1.png" />
+    <img id="ZombieWalkLeft2" src="images/ZombieWalkLeft2.png" />
+    <img id="ZombieWalkLeft3" src="images/ZombieWalkLeft3.png" />
+    <img id="ZombieWalkLeft4" src="images/ZombieWalkLeft4.png" />
+    <img id="ZombieWalkLeft5" src="images/ZombieWalkLeft5.png" />
+    <img id="ZombieWalkLeft6" src="images/ZombieWalkLeft6.png" />
+    <img id="ZombieWalkLeft7" src="images/ZombieWalkLeft7.png" />
+    <img id="ZombieWalkLeft8" src="images/ZombieWalkLeft8.png" />
+    <img id="ZombieWalkLeft9" src="images/ZombieWalkLeft9.png" />
+    <img id="ZombieWalkLeft10" src="images/ZombieWalkLeft10.png" />
+
+    <img id="BackGround" src="images/BG.png" />
+    <img id="Tile1" src="images/Tile (1).png" />
+    <img id="Tile2" src="images/Tile (2).png" />
+    <img id="Tile3" src="images/Tile (3).png" />
+    <img id="Skull" src="images/Bone (1).png" />
+    <img id="TombStone" src="images/TombStone (2).png" />
+    <img id="Tree" src="images/Tree.png" />
+	<img id="Heart" src="images/Heart.png" />
+	<img id="GameOver" src="images/GameOver.jpg" />
+    <img id="ZombieDead1" src="images/ZombieDead(1).png" />
+    <img id="ZombieDead2" src="images/ZombieDead(2).png" />
+    <img id="ZombieDead3" src="images/ZombieDead(3).png" />
+    <img id="ZombieDead4" src="images/ZombieDead(4).png" />
+    <img id="ZombieDead5" src="images/ZombieDead(5).png" />
+    <img id="ZombieDead6" src="images/ZombieDead(6).png" />
+    <img id="ZombieDead7" src="images/ZombieDead(7).png" />
+    <img id="ZombieDead8" src="images/ZombieDead(8).png" />
+    <img id="ZombieDead9" src="images/ZombieDead(9).png" />
+    <img id="ZombieDead10" src="images/ZombieDead(10).png" />
+    <img id="ZombieDead11" src="images/ZombieDead(11).png" />
+    <img id="ZombieDead12" src="images/ZombieDead(12).png" />
+	<img id="ZombieWalkLeft1" src="images/ZombieWalkLeft1.png" />
+    <img id="ZombieWalkLeft2" src="images/ZombieWalkLeft2.png" />
+    <img id="ZombieWalkLeft3" src="images/ZombieWalkLeft3.png" />
+    <img id="ZombieWalkLeft4" src="images/ZombieWalkLeft4.png" />
+    <img id="ZombieWalkLeft5" src="images/ZombieWalkLeft5.png" />
+    <img id="ZombieWalkLeft6" src="images/ZombieWalkLeft6.png" />
+    <img id="ZombieWalkLeft7" src="images/ZombieWalkLeft7.png" />
+    <img id="ZombieWalkLeft8" src="images/ZombieWalkLeft8.png" />
+    <img id="ZombieWalkLeft9" src="images/ZombieWalkLeft9.png" />
+    <img id="ZombieWalkLeft10" src="images/ZombieWalkLeft10.png" />
+
+
+    <script type="module" src="http://localhost/proiect/Back/src/index2.js"></script>
+  </body>
+</html>
