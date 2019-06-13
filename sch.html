@@ -1,0 +1,86 @@
+
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<project>
+    <div id="body" style="text-align: center">
+    
+        <meta property="schema:givenName" content="Bianca">
+        <meta property="schema:familyName" content="Carp">
+          <span property="schema:name">Carp Bianca</span>
+      </br>
+
+        <meta property="schema:givenName" content="Miron">
+        <meta property="schema:familyName" content="Robert">
+          <span property="schema:name">Miron Robert-Andrei </span>
+      </br>
+        <meta property="schema:givenName" content="Susan">
+        <meta property="schema:familyName" content="Stefan-Claudiu">
+          <span property="schema:name">Susan Stefan-Claudiu</span>
+     </br>
+        <meta property="schema:givenName" content="Traistar">
+        <meta property="schema:familyName" content="Bianca">
+          <span property="schema:name">Traistar Bianca</span>
+    </br>
+
+      <span typeof="schema:Organization" resource="https://www.info.uaic.ro/">
+        <span property="schema:name"><a href="https://www.info.uaic.ro/"><infoiasi>Facultatea de Informatica Iasi</infoiasi></a></span>
+      (<span property="schema:location" typeof="schema:Place">
+        <span property="schema:address" typeof="schema:PostalAddress">
+          <span property="schema:addressLocality">Iasi</span>,
+          <span property="schema:addressCountry">Romania</span>
+        </span>
+      </span>)
+    </span> </body>  </br>
+
+      <article resource="#" typeof="schema:ScholarlyArticle">
+        <header>
+          <web><h1 property="schema:name">Zangry Zombie</h1></web>
+        
+        </header>
+        <meta property="schema:accessibilityFeature" content="alternativeText">
+        <meta property="schema:accessibilityFeature" content="MathML">
+        <meta property="schema:accessibilityHazard" content="noFlashingHazard">
+
+        <p> In prima parte a proiectului am facut desing-ul jocului si am realizat interfata acestuia. Am facut cate o pagina html pentru magazinul jocului, 
+         pentru indicatiile utile jucatorului, si pentru top-ul jucatorilor.   
+        </p>
+
+        
+        <p>
+              Urmatoarea etapa a fost implementarea jocului si a functionalitatilor. Jocul a fost realizat in javascript, iar microserviciile in php.
+           In folderul api avem create mai multe API-uri prin care interactionam cu baza de date.
+        </p>
+
+           
+        <p>
+                In fisierul register.php, apelez un API-ul care insereaza in baza de date conturile noi create, daca un username se afla deja in baza de date atunci va afisa
+             un mesaj, acest microserviciu v-a fi apelat in fisierul register1.php unde se afla si form-ul pentru crearea contului.
+             In login.php se apeleaza acelasi API facut pentru tabela users, si se verifica username-ul si parola din baza de date cu cele introduse in pagina de login index1.php 
+             unde este apelat acest microserviciu. Pe acest  model am creat si celelalte functionalitati pentru shop si pentru top score.   
+        </p>
+
+        
+
+       
+
+        <p>
+            In index.php se afla pagina principala si este leagata toata logica jocului continand un meniu cu butoane care te directioneza spre celelalte servicii si butonul de start care va incepe jocul.
+        </p>
+
+        <p>Am folosit pentru realizarea acestui proiect Github, usurandu-ne astfel munca putand comunica mai usor.
+        </p>
+    </article>
+
+</project>
+</div>
+</body>
+</html>
+
