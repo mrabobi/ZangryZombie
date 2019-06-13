@@ -74,6 +74,14 @@
         <p>
             In index.php se afla pagina principala si este leagata toata logica jocului continand un meniu cu butoane care te directioneza spre celelalte servicii si butonul de start care va incepe jocul.
         </p>
+		
+		<p>
+            Arhitectura jocului respecta MVC.Clasa game tine toata logica jocului si include mai multe functii de update pentru diferite aspecte de gameplay(pozitia jucatorului,viata jucatorului,pozitia inamicilor etc.) 
+			si functia ce aduce jocul in starea initiala.Clasa display include functii pentru a desene pe ecran toate elementele jocului(jucatorul,inamicii,harta).Clasa input inregistreaza tastele apasate de jucator si apeleaza
+			functii corespunzatoare din clasa game sau din clase ce sunt componente ale clasei game.
+			Pe langa acestea 3,mai gasim si clase pentru a modela jucatorul,inamicii si harta.Acestea retin elemente ce tin de entitatile respective,cum ar fi numarul de vieti ale jocatorului,stats-urile caracterului
+			(damage,crit chance etc),layout ul hartii si pozitia fiecarui inamic.
+        </p>
 
         <p>Am folosit pentru realizarea acestui proiect Github, usurandu-ne astfel munca putand comunica mai usor.
         </p>
