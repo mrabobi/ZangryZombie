@@ -2,7 +2,7 @@
   <h1 align = "center"><img src="https://i.imgur.com/tDf0eQX.png" width="500" align="middle"> </h1>
   <br>
   <br>
-   Scholarly HTML : <a href="www.google.ro">Soon</a><br>
+   Scholarly HTML : <a href="https://github.com/mrabobi/ZangryZombie/blob/master/sch.html">Click</a><br>
    Link video: <a href="https://youtu.be/iwnvXq-p1bw">Click</a>
   <br>
   <h1 align = "center"> <img src="https://i.imgur.com/Y4kZQ2F.png" width="500" align="middle"> </h1>
